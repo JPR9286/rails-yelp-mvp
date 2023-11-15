@@ -7,11 +7,14 @@
 <%= @restaurant.category %>
 <br>
 <div>
-  <% @restaurant.reviews.each do |review| %>
-    <%= review.rating %>
-    <%= review.content %>
-  <% end %>
-  <br>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <%= review.rating %>
+        <%= review.content %>
+      </li>
+    <% end %>
+  </ul>
     <%= simple_form_for [@restaurant, @review] do |f| %>
     <%= f.input :rating %>
     <%= f.input :content %>
